@@ -95,6 +95,8 @@ public class Activator implements BundleActivator, ServiceListener, Runnable{
 			// @Tianchi: Add one check, if a hello service was registered, see
 			// if it is the service preferred, if yes, change the service to it.
 			else{
+
+				/** One possible method
 				ServiceReference[] refs = null;
 				try
                 {
@@ -112,6 +114,17 @@ public class Activator implements BundleActivator, ServiceListener, Runnable{
                 	if( null != helloObj )
                 	this.setMyHelloService( (HelloService)helloObj );
 				}
+				 */
+
+				ServiceReference myHelloServiceReference = event.getServiceReference();
+				if(myHelloServiceReference.getProperty("Language").equals(PREFERED_LANGUAGE))
+				{
+					this.myHelloReference = event.getServiceReference();
+					Object helloObj = this.myContext.getService(this.myHelloReference);
+                	if( null != helloObj )
+                	this.setMyHelloService( (HelloService)helloObj );
+				}
+				
 			}
 		}
 		

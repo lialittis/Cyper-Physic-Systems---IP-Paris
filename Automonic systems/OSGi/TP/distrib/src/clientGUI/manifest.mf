@@ -1,0 +1,7 @@
+Bundle-Name: Hello GUI Client
+Bundle-Description: A bundle that uses a given hello service and graphically prints the messages
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Export-Package: clientGUI
+Import-Package: hello.service
+

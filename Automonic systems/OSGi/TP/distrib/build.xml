@@ -1,0 +1,87 @@
+<project default="compile" basedir=".">
+
+	<!-- Initializes the environment paths and properties -->
+	<target name="init">
+		<property name="src.dir" location="./src"/>
+		<property name="bin.dir" location="./bin"/>
+		<property name="felix.lib" location="../felix/bin/felix.jar"/>
+		<property name="jars.dir" location="./jars"/>
+	</target>
+
+	<!-- Prepares the compilation phase -->
+	<target name="prepare" depends="init">
+	    <delete quiet="true" dir="${bin.dir}"/>
+	    <mkdir dir="${bin.dir}"/>
+	</target>
+	
+	<!-- Prepares for the creation of jars - OSGi Bundles -->
+	<target name="prepare-jars" depends="init">
+	    <delete quiet="true" dir="${jars.dir}"/>
+	    <mkdir dir="${jars.dir}"/>
+	</target>
+
+	<!-- Compiles -->
+	<!-- with Java 1.7 -->
+	<target name="compile" depends="prepare" description="--> Compile all java sources">
+	    <javac srcdir="${src.dir}"
+		   classpath="${felix.lib}"
+	           destdir="${bin.dir}"
+	           source="1.7" target="1.7" debug="true"
+	           deprecation="${deprecation}"
+	           optimize="${optimize}"
+	           nowarn="${nowarn}"
+	           verbose="${verbose}">
+	      <include name="**/*.java"/>
+	    </javac>
+	</target>
+	<!-- with Java 1.6 -->
+	<!--
+	<target name="compile" depends="prepare" description="- -> Compile all java sources">
+	    <javac srcdir="${src.dir}"
+		   classpath="${felix.lib}"
+	           destdir="${bin.dir}"
+	           source="1.6" target="1.6" debug="true"
+	           deprecation="${deprecation}"
+	           optimize="${optimize}"
+	           nowarn="${nowarn}"
+	           verbose="${verbose}">
+	      <include name="**/*.java"/>
+	    </javac>
+	</target>
+	-->
+
+	<!-- Creates jars - OSGi Bundles -->
+	<target name="jars" depends="prepare-jars" description="--> Creates the OSGi Bundles / jar archives">
+		<jar destfile="${jars.dir}/client.jar"
+       			basedir="${bin.dir}"
+			includes="client/**"
+       			manifest="${src.dir}/client/manifest.mf"
+  		/>
+		<jar destfile="${jars.dir}/clientGUI.jar"
+       			basedir="${bin.dir}"
+			includes="clientGUI/**"
+       			manifest="${src.dir}/clientGUI/manifest.mf"
+  		/>
+		<jar destfile="${jars.dir}/hello.jar"
+       			basedir="${bin.dir}"
+			includes="hello/service/**"
+       			manifest="${src.dir}/hello/service/manifest.mf"
+  		/>
+		<jar destfile="${jars.dir}/helloEn.jar"
+       			basedir="${bin.dir}"
+			includes="helloEn/**"
+       			manifest="${src.dir}/helloEn/manifest.mf"
+  		/>
+		<jar destfile="${jars.dir}/helloFr.jar"
+       			basedir="${bin.dir}"
+			includes="helloFr/**"
+       			manifest="${src.dir}/helloFr/manifest.mf"
+  		/>
+		<jar destfile="${jars.dir}/helloCh.jar"
+       			basedir="${bin.dir}"
+			includes="helloCh/**"
+       			manifest="${src.dir}/helloCh/manifest.mf"
+  		/>
+	</target>	
+
+</project>

@@ -1,0 +1,6 @@
+Bundle-Name: English Hello
+Bundle-Description: A bundle that registers an English message service
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: helloEn.Activator
+Import-Package: org.osgi.framework, hello.service

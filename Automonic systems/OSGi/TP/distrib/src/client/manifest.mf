@@ -1,0 +1,7 @@
+Bundle-Name: Dynamic Hello Client
+Bundle-Description: A bundle that uses the hello service depending on availability
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: client.Activator
+Import-Package: org.osgi.framework,hello.service,clientGUI
+

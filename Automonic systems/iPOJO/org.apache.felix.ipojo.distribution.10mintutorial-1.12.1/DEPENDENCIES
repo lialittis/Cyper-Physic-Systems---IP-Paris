@@ -1,0 +1,47 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache Felix iPOJO - Distribution - 10 minutes tutorial
+
+
+From: 'Apache Software Foundation' (http://www.apache.org/)
+  - XML Commons External Components XML APIs (http://xml.apache.org/commons/components/external/) xml-apis:xml-apis:jar:1.3.04
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'aQute SARL' (http://www.aQute.biz)
+  - aQute Bundle Tool (http://www.aQute.biz/Code/Bnd) biz.aQute:bnd:jar:1.50.0
+    License: All files contained in this JAR are licensed under the Apache 2.0 license, unless noted differently in their source (see swing2swt).  (http://www.opensource.org/licenses/apache2.0.php)
+
+From: 'ObjectWeb' (http://www.objectweb.org/)
+  - ASM All (http://asm.objectweb.org/asm-all/) org.ow2.asm:asm-all:jar:5.0.2
+    License: BSD  (http://asm.objectweb.org/license.html)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - ant (http://www.apache.org/ant/) ant:ant:jar:1.6.5
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons CLI (http://commons.apache.org/cli/) commons-cli:commons-cli:jar:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO (http://ipojo.org) org.apache.felix:org.apache.felix.ipojo:bundle:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO Annotations (http://felix.apache.org/documentation/subprojects/apache-felix-ipojo/apache-felix-ipojo-gettingstarted/how-to-use-ipojo-annotations.html) org.apache.felix:org.apache.felix.ipojo.annotations:jar:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO Ant Task (http://felix.apache.org/org.apache.felix.ipojo.ant/) org.apache.felix:org.apache.felix.ipojo.ant:bundle:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO - Distribution - Quickstart (http://felix.apache.org/org.apache.felix.ipojo.distribution.quickstart/) org.apache.felix:org.apache.felix.ipojo.distribution.quickstart:pom:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO Gogo Command (http://felix.apache.org/documentation/subprojects/apache-felix-ipojo/apache-felix-ipojo-tools/ipojo-arch-command.html) org.apache.felix:org.apache.felix.ipojo.gogo:bundle:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO Manipulator (http://felix.apache.org/org.apache.felix.ipojo.manipulator/) org.apache.felix:org.apache.felix.ipojo.manipulator:bundle:1.12.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix iPOJO Metadata (http://felix.apache.org/org.apache.felix.ipojo.metadata/) org.apache.felix:org.apache.felix.ipojo.metadata:bundle:1.6.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Felix Main Distribution (http://felix.apache.org/org.apache.felix.main.distribution/) org.apache.felix:org.apache.felix.main.distribution:pom:4.2.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Xerces2 Java Parser (http://xerces.apache.org/xerces2-j) xerces:xercesImpl:jar:2.9.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

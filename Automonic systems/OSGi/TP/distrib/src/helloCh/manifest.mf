@@ -1,0 +1,6 @@
+Bundle-Name: Chinese Hello
+Bundle-Description: A bundle that registers a Chinese message service
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: helloCh.Activator
+Import-Package: org.osgi.framework, hello.service

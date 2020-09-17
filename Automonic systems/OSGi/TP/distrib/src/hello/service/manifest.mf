@@ -1,0 +1,5 @@
+Bundle-Name: Hello Service
+Bundle-Description: A bundle that declares a hello service 
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Export-Package: hello.service

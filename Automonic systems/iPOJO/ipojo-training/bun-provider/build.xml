@@ -1,0 +1,67 @@
+<project name="bun-reseller" default="package" basedir=".">
+
+	<!-- Compilation Configuration -->
+	<property name="src" value="src"/>
+	<property name="target" value="target"/>
+
+
+	<!-- Bundle Configuration -->
+	<property name="version" value="1.0.0"/>
+	<property name="bundle.name" value="bun-reseller"/>
+	<property name="bundle.symbolicname" value="de.akquinet.gomobile.ipojo.training.bun"/>
+
+	<!-- Runtime -->
+	<property name="runtime" value="../chameleon"/>
+
+	<!-- Output file -->
+	<property name="out" value="${target}/${bundle.name}-${version}.jar"/>
+
+	<path id="classpath">
+			<fileset dir="../libs">
+				<include name="**/*.jar" />
+			</fileset>
+			<fileset dir="../service-interfaces/target">
+				<include name="**/*.jar" />
+			</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${target}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src}"
+		       destdir="${target}"
+		       source="1.5"
+				classpathref="classpath"
+		 />
+	</target>
+
+
+	<target name="package" depends="compile">
+		<taskdef resource="aQute/bnd/ant/taskdef.properties"
+    	        classpath="../libs/bnd.jar"/>
+
+		 <taskdef name="ipojo"
+		        classname="org.apache.felix.ipojo.task.IPojoTask"
+		        classpath="../libs/org.apache.felix.ipojo.ant-1.5.0-SNAPSHOT.jar"/>
+		<bnd
+    	        classpath="${target}"
+    	        exceptions="true"
+    	        files="${bundle.name}.bnd"
+    	      	output="${out}"
+      	/>
+		<ipojo
+		      input="${out}"
+		 />
+	</target>
+
+	<target name="install">
+		<copy file="${out}" todir="${runtime}/deploy"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${target}"/>
+	</target>
+
+</project>

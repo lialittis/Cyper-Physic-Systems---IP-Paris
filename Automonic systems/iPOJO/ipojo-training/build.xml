@@ -1,0 +1,58 @@
+<project name="ipojo-training" default="package" basedir=".">
+
+
+	<target name="package">
+		<ant dir="service-interfaces" target="package"/>
+		<ant dir="shop-servlet" target="package"/>
+		<ant dir="corn-vendor" target="package"/>
+		<ant dir="popcorn-vendor" target="package"/>
+		<ant dir="wiener-provider" target="package"/>
+		<ant dir="bun-provider" target="package"/>
+		<ant dir="hotdog-vendor" target="package"/>
+	</target>
+
+	<target name="install">
+		<ant dir="service-interfaces" target="install"/>
+		<ant dir="shop-servlet" target="install"/>
+		<ant dir="corn-vendor" target="install"/>
+		<ant dir="popcorn-vendor" target="install"/>
+		<ant dir="wiener-provider" target="install"/>
+		<ant dir="bun-provider" target="install"/>
+		<ant dir="hotdog-vendor" target="install"/>
+	</target>
+
+	<target name="clean">
+		<ant dir="service-interfaces" target="clean"/>
+		<ant dir="shop-servlet" target="clean"/>
+		<ant dir="corn-vendor" target="clean"/>
+		<ant dir="popcorn-vendor" target="clean"/>
+		<ant dir="wiener-provider" target="clean"/>
+		<ant dir="bun-provider" target="clean"/>
+		<ant dir="hotdog-vendor" target="clean"/>
+	</target>
+
+	<target name="clean-runtime">
+		<delete dir="chameleon/chameleon-cache"/>
+		<delete dir="chameleon/log"/>
+		<delete dir="chameleon/deploy"/>
+		<mkdir dir="chameleon/deploy"/>
+	</target>
+
+	<target name="assembly" depends="clean, clean-runtime">
+		<delete dir="dist"/>
+		<mkdir dir="dist"/>
+		<zip destfile="dist/ipojo-training.zip">
+			<zipfileset dir="service-interfaces" prefix="service-interfaces"/>
+			<zipfileset dir="shop-servlet" prefix="shop-servlet"/>
+			<zipfileset dir="corn-vendor" prefix="corn-vendor"/>
+			<zipfileset dir="popcorn-vendor" prefix="popcorn-vendor"/>
+			<zipfileset dir="wiener-provider" prefix="wiener-provider"/>
+			<zipfileset dir="bun-provider" prefix="bun-provider"/>
+			<zipfileset dir="hotdog-vendor" prefix="hotdog-vendor"/>
+			<zipfileset dir="chameleon" prefix="chameleon"/>
+			<zipfileset dir="." includes="build.xml"/>
+			<zipfileset dir="libs" prefix="libs"/>
+		</zip>
+	</target>
+
+</project>

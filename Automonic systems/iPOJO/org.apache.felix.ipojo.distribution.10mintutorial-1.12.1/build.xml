@@ -24,6 +24,7 @@
 	<target name="clean">
 		<ant dir="spell.services" target="clean"/>
 		<ant dir="spell.english" target="clean"/>
+		<ant dir="spell.french" target="clean"/>
 		<ant dir="spell.checker" target="clean"/>
 		<ant dir="spell.checker.gui" target="clean"/>
 		<ant dir="solution" target="clean"/>
@@ -34,6 +35,7 @@
 	<target name="package">
 		<ant dir="spell.services" target="package"/>
 		<ant dir="spell.english" target="package"/>
+		<ant dir="spell.french" target="clean"/>
 		<ant dir="spell.checker" target="package"/>
 		<ant dir="spell.checker.gui" target="package"/>
 		<ant dir="solution" target="package"/>	

@@ -1,0 +1,5 @@
+Bundle-SymbolicName: ${bundle.symbolicname}
+Bundle-Name: ${bundle.name}
+Bundle-Version: ${version}
+Import-Package: *
+Export-Package: de.akquinet.gomobile.ipojo.training.service; version=1.0.0

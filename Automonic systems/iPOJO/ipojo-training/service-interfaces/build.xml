@@ -1,0 +1,50 @@
+<project name="service-interfaces" default="package" basedir=".">
+
+	<!-- Compilation Configuration -->
+	<property name="src" value="src"/>
+	<property name="target" value="target"/>
+
+
+	<!-- Bundle Configuration -->
+	<property name="version" value="1.0.0"/>
+	<property name="bundle.name" value="service-interfaces"/>
+	<property name="bundle.symbolicname" value="de.akquinet.gomobile.ipojo.training.service"/>
+
+	<!-- Runtime -->
+	<property name="runtime" value="../chameleon"/>
+
+	<!-- Output file -->
+	<property name="out" value="${target}/${bundle.name}-${version}.jar"/>
+
+	<target name="init">
+		<mkdir dir="${target}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src}"
+		         destdir="${target}"
+		         source="1.5"
+		  />
+	</target>
+
+
+    <target name="package" depends="compile">
+    	<taskdef resource="aQute/bnd/ant/taskdef.properties"
+    	        classpath="../libs/bnd.jar"/>
+    	      <bnd
+    	        classpath="${target}"
+    	        exceptions="true"
+    	        files="service-interfaces.bnd"
+    	      	output="${out}"
+      		  />
+    </target>
+
+	<target name="install">
+		<copy file="${out}" todir="${runtime}/deploy"/>
+	</target>
+
+    <target name="clean">
+		<delete dir="${target}"/>
+    </target>
+
+</project>

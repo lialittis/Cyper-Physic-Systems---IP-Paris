@@ -212,14 +212,14 @@ QEst = 1000*np.eye(3, 3) @ QTrue
 PYEst = np.eye(2, 2) @ PYTrue
 """
 # High distance noise and correct direction noise of the landmarks
-QEst = np.eye(3,3) @ QTrue
+QEst = np.array([[1.0,0.0,0.0],[0.0,1.0,0.0],[0.0,0.0,1.0]]) @ QTrue
 PYEst = np.array([[1000.0,0.0],[0.0,1.0]]) @ PYTrue
 
 # initial conditions
 xTrue = np.array([[1, -40, -pi/2]]).T
 xOdom = xTrue
 xEst = xTrue
-PEst = 10 * np.diag([1, 1, (1*pi/180)**2])
+PEst = 100 * np.diag([1, 1, (1*pi/180)**2])
 
 # Init history matrixes
 hxEst = xEst
